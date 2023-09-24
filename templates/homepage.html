@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaatCheet</title>
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+    rel="stylesheet"
+    />
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+    ></script>
+
+  
+</head>
+<style>
+  body {
+  background-color: #fbfbfb;
+  }
+  @media (min-width: 991.98px) {
+  main {
+  padding-left: 240px;
+  }
+  }
+
+  /* Sidebar */
+  .sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0; /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+  }
+
+  @media (max-width: 991.98px) {
+  .sidebar {
+  width: 100%;
+  }
+  }
+  .sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  }
+
+  .sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+  /* Adjust the positioning */
+  .content-container {
+    padding-top: 50px;/* Ensure the content is above the navbar */
+}
+</style>
+<body>
+
+<header>
+
+<!-- NAVBAR START -->
+<nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+           <a class="navbar-brand" href="#" style="    font-family: ui-rounded; font-weight: bold;">BAATCheet</a>
+        <!-- Left links -->
+        <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Projects</a>
+          </li>
+        </ul> -->
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+
+        <!-- HOME ICON -->
+            <a class="text-reset me-5" href="#">
+              <span><i class="fas fa-home fa-lg"></i></span>
+              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+            </a>
+        
+        <!-- CHAT NOTIFICATION ICON -->
+        <a class="text-reset me-4" href="#">
+            <span><i class="fas fa-users fa-lg"></i></span>
+            <span class="badge rounded-pill badge-notification bg-danger">2</span>
+          </a>
+
+        <!-- Notifications -->
+        <div class="dropdown">
+          <a
+            class="text-reset me-5 dropdown-toggle hidden-arrow"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bell"></i>
+            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <li>
+              <a class="dropdown-item" href="#">Some news</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Another news</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a
+            class="dropdown-toggle d-flex align-items-center hidden-arrow"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+              class="rounded-circle"
+              height="50"
+              loading="lazy"
+            />
+            <!-- <strong class=" d-sm-block ms-3">{{ user.username }}</strong> -->
+            <i class="fas fa-chevron-circle-down ms-4 fa-lg"></i>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuAvatar"
+          >
+            <li>
+              <a class="dropdown-item" href="#">My profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Settings</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+            </li>
+           </ul>
+         </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- NAVBAR  STOP -->
+</header>
+
+<!-- SIDEBAR START -->
+<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+  <div class="position-sticky">
+    <div class="list-group list-group-flush mx-3 mt-4">
+      <a href="#" class="list-group-item list-group-item-action py-3 ripple active " aria-current="true">
+        <img
+        src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+        class="rounded-circle"
+        height="50"
+        loading="lazy"
+      />
+        <i class=" me-2"></i><span >{{ user.username }}</span>
+      </a>
+      <a href="{% url 'friends' %}" class="list-group-item list-group-item-action py-3 ripple mt-2">
+        <i class="fa-solid fa-user-group fa-fw me-3"></i><span >Friends</span>
+      </a>
+      <a href="{% url 'groups' %}" class="list-group-item list-group-item-action py-3 ripple"><i
+          class="fa fa-users fa-fw me-3"></i><span>Groups</span></a>
+      <a href="{% url 'anonymous' %}" class="list-group-item list-group-item-action py-3 ripple"><i
+          class="fas fa-user-secret fa-fw me-3"></i><span>Anonymous Chat</span></a>
+      <a href="{% url 'ai_chat' %}" class="list-group-item list-group-item-action py-3 ripple">
+        <i class="fa-solid fa-robot fa-fw me-3"></i><span>Chat with AI</span>
+      </a>
+      <a href="{% url 'vedio_chat' %}" class="list-group-item list-group-item-action py-3 ripple"><i
+          class="fa fa-video-camera fa-fw me-3"></i><span>Video Chat</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-3 ripple"><i
+          class="fas fa-globe fa-fw me-3"></i><span>International</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-3 ripple"><i
+          class="fas fa-building fa-fw me-3"></i><span>Partners</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-3 ripple"><i
+          class="fas fa-calendar fa-fw me-3"></i><span>Calendar</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-3 ripple"><i
+          class="fas fa-users fa-fw me-3"></i><span>Users</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-3 ripple"><i
+          class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a>
+    </div>
+  </div>
+</nav>
+<!-- SIDEBAR STOP -->
+
+<main>
+  <div class="content-container bg-light">
+    <div class="container-fluid">
+      <!-- <div class="row"> -->
+        <div class="col-md-6 offset-md-3">
+          <h2 class="text-center text-dark mt-5">Anonymous Login</h2>
+          <div class="text-center mb-5 text-dark">Enter a moniker to introduce yourself</div>
+          <div class="card my-5">
+            <form class="card-body cardbody-color p-lg-5" action="" method="post">
+              {% csrf_token %}
+              <div class="text-center">
+                <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                  width="200px" alt="profile">
+              </div>
+              <div class="mb-3">
+                <input  required ="text" name = "anonymous_name" class="form-control" id="Anonymous_name" aria-describedby="emailHelp"
+                  placeholder="Anonymous Name">
+              </div>
+              <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100" >Login</button></div>
+              
+            </form>
+          </div>
+  
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</main>
+
+
+</body>
+</html>
